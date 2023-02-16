@@ -9,7 +9,84 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    
+    <header class="jumbotron bg-info">
+        <h1 class="display-3 text-center mr-5">Scheduler</h1>
+        <p class="lead text-center mr-5">Calendar app for scheduling your day</p>
+        <h1 id="currentDay" class="lead text-center" style="color:rgb(201, 186, 105);font-size:40px;"></h1>
+    </header>
+
+    <main class="container d-flex vw-100 justify-content-between">
+        <div class="card col-6 m-3">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Instructions</li>
+                <li class="list-group-item">Project Name</li>
+                <li class="list-group-item">Project Type</li>
+                <li class="list-group-item">Due Date</li>
+            </ul>
+            <div class="card-footer">
+              <button>Submit</button>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                 <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                        <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Send message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container col-6 m-3">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+          
+    </main>
+
 
 
 
