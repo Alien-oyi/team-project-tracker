@@ -20,6 +20,7 @@ var printSkills = function (name,type,date) {
 
 var handleFormSubmit = function (event) {
   event.preventDefault();
+  console.log("handleFormSubmit");
 
   var nameInput = nameInputEl.val();
   var typeInput = typeInputEl.val();
@@ -30,19 +31,20 @@ var handleFormSubmit = function (event) {
     return;
   }
 
+
   printSkills(nameInput, typeInput, dateInput);
 
   nameInputEl.val('');
   typeInputEl.val('');
   dateInputEl.val('');
+  
+   
 };
+console.log(formEl);
+formEl.submit(handleFormSubmit);
 
-formEl.on('submit', handleFormSubmit);
 
-var exampleModal = document.getElementById('exampleModal')
-exampleModal.addEventListener('show.bs.modal', event => {
-  modalTitle.textContent = `Submit-form`
-})
+
 // Datepicker widget
 $(function () {
   $('#datepicker').datepicker({
@@ -50,3 +52,47 @@ $(function () {
     changeYear: true,
   });
 });
+
+var projectForm = document.getElementById('project-form');
+projectForm.addEventListener('submit', function(event) {
+event.preventDefault(); 
+
+
+var modal = document.getElementById('exampleModal');
+var modalInstance = bootstrap.Modal.getInstance(modal);
+modalInstance.hide();
+});
+
+$(function() {
+  $('#exampleModal').on('shown.bs.modal', function() {
+    var availableTags = [
+      'ActionScript',
+      'AppleScript',
+      'Asp',
+      'BASIC',
+      'C',
+      'C++',
+      'Clojure',
+      'COBOL',
+      'ColdFusion',
+      'Erlang',
+      'Fortran',
+      'Groovy',
+      'Haskell',
+      'Java',
+      'JavaScript',
+      'Lisp',
+      'Perl',
+      'PHP',
+      'Python',
+      'Ruby',
+      'Scala',
+      'Scheme'
+    ];
+    $('#project-type').autocomplete({
+      source: availableTags
+    });
+  });
+});
+   
+
